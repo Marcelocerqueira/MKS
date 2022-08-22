@@ -10,10 +10,11 @@ interface Props {
 
 const Menu: React.FC<Props> = ({ setIsModalVisible }) => {
   const { setCountCart, countCart } = useAuth();
-  console.log("teste", countCart);
+  // console.log("teste", countCart);
   return (
     <Container>
-      <h1>Início</h1>
+      <h1>MKS</h1>
+      <p>Sistemas</p>
 
       {countCart?.length > 0 ? (
         <div
@@ -24,11 +25,15 @@ const Menu: React.FC<Props> = ({ setIsModalVisible }) => {
             setIsModalVisible(true);
           }}
         >
-          <div className="cart-item">{countCart?.length}</div>
-          <FiShoppingCart />
+          <div className="cart-item1">
+            <div className="cart-item">{countCart?.length}</div>
+            <FiShoppingCart />
+          </div>
         </div>
       ) : (
-        <FiShoppingCart />
+        <div className="cart-svg">
+          <FiShoppingCart />
+        </div>
       )}
     </Container>
   );

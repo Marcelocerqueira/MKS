@@ -2,22 +2,31 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "./styles";
 
+import { RiShoppingBag3Line } from "react-icons/ri";
+
 import computImage from "../../assets/comput.jpeg";
 import { useAuth } from "../../hooks/carts";
 
 interface Props {
-  setIsModalVisible: any;
+  setIsModalVisible: (isModalVisible: boolean) => void;
+}
+
+interface ICardImagem {
+  id: number;
+  name: string;
+  description: string;
+  photo: string;
+  price: number;
 }
 
 const CardImagem: React.FC<Props> = (props) => {
   const { setCountCart } = useAuth();
-  const [newObject, setWewObject] = useState<any>([]);
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<any[]>([]);
 
   const instance = axios.create({
     baseURL: "https://mks-frontend-challenge-api.herokuapp.com/api/v1",
-    // timeout: 1000,
-    // headers: { "X-Custom-Header": "foobar" },
+    timeout: 1000,
+    headers: { "X-Custom-Header": "foobar" },
   });
   useEffect(() => {
     instance
@@ -30,32 +39,39 @@ const CardImagem: React.FC<Props> = (props) => {
         },
       })
       .then((res) => {
-        setData(res.data.data.products);
-        console.log(res);
+        setData(res.data.products);
       });
   }, []);
 
   return (
     <Container>
-      {data.map((item: any) => (
+      {data.map((item: ICardImagem) => (
         <div className="card">
           <img alt="imagem" src={item?.photo} />
-          <h2>{item?.name}</h2>
+
           <div className="card-btn">
-            <p>R${item?.price}</p>
-            <button
-              onClick={() => {
-                let object = {
-                  title: item?.name,
-                  money: item?.price,
-                  url: item?.photo,
-                };
-                setCountCart((old: any) => [...old, object]);
-              }}
-            >
-              +
-            </button>
+            <h2>{item?.name}</h2>
+            <p>
+              {Intl.NumberFormat("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              }).format(item.price)}
+            </p>
           </div>
+
+          <button
+            onClick={() => {
+              let object = {
+                name: item?.name,
+                price: item?.price,
+                photo: item?.photo,
+              };
+              setCountCart((old: any) => [...old, object]);
+            }}
+          >
+            <RiShoppingBag3Line />
+            COMPRAR
+          </button>
         </div>
       ))}
     </Container>

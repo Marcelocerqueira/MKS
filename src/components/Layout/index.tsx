@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import HeaderMenu from "../Menu";
-import Input from "../Input";
 import CardImagem from "../CardImagem";
 
 import {
@@ -34,7 +33,7 @@ const LayoutCompeent: React.FC = () => {
   const totalCheckout = () => {
     let total: any = 0;
     countCart.map((item: any) => {
-      total += item.money;
+      total += Number(item.price);
     });
     setTotal(total);
     return total;
@@ -76,10 +75,15 @@ const LayoutCompeent: React.FC = () => {
                       <Checkout key={item.id}>
                         <div className="checkout-modal">
                           <div>
-                            <img src={item.url} alt="" />
+                            <img src={item.photo} alt="" />
                           </div>
-                          <div>{item.title}</div>
-                          <div>{item.money}</div>
+                          <div>{item.name}</div>
+                          <div>
+                            {Intl.NumberFormat("pt-br", {
+                              style: "currency",
+                              currency: "BRL",
+                            }).format(item.price)}
+                          </div>
                           <div className="btn">
                             - <input type="text" />+
                           </div>
@@ -108,45 +112,11 @@ const LayoutCompeent: React.FC = () => {
               </div>
             </div>
           </ModalContainer>
-
-          <Sider>
-            <div>
-              <h1>Filtrar</h1>
-              <h2>
-                Preço <hr /> de
-              </h2>
-            </div>
-            <input type="text" placeholder="R$ 0,00" />
-            <div>
-              <h2>Até</h2>
-            </div>
-            <input type="text" placeholder="R$ 0,00" />
-            <div>
-              <h1>Ordenar</h1>
-              <h4>Preço</h4>
-            </div>
-
-            <select>
-              <option value="item1">Menor preço </option>
-              <option value="item1">Maior preço </option>
-            </select>
-
-            <div>
-              <h4>Data de inclusão</h4>
-            </div>
-
-            <select>
-              <option value="item1">Mais recente</option>
-              <option value="item1">Menos recente </option>
-            </select>
-          </Sider>
           <div
             style={{
               padding: 10,
             }}
           >
-            <Input />
-
             <CardImagem setIsModalVisible={setIsModalVisible} />
           </div>
         </Content>

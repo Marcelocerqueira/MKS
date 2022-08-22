@@ -24,24 +24,27 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    /* border: 2px solid #000; */
+    border: 2px solid #000;
     justify-content: space-between;
 
     p {
-      font-size: 22px;
-      margin-top: 10px;
-      color: #00a650;
-      font-weight: 600;
-    }
-
-    button {
-      width: 35px;
-      background: #00bfff;
-      color: white;
-      border-radius: 5px;
+      width: 64px;
+      height: 26px;
       font-size: 15px;
-      display: flex;
-      justify-content: center;
+      /* margin-top: 10px; */
+      border-radius: 5px;
+      color: #ffffff;
+      background: #373737;
+      font-weight: 700;
     }
+  }
+  button {
+    width: 100%;
+    background: #0f52ba;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
   }
 `;
