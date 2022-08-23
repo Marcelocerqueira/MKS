@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 60px;
-  margin-top: 3px;
+  width: 1500px;
+  height: 101px;
+  /* margin-top: 3px; */
   background: rgba(15, 82, 186, 1);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: 1px solid red; */
 
   p {
     width: 100%;
@@ -16,33 +17,24 @@ export const Container = styled.div`
     margin-top: 9px;
   }
 
-  .cart-item {
-    width: 16px;
-    height: 17px;
-    /* display: flex; */
-    /* top: 4px; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    border-radius: 50%;
-    /* position: relative; */
-    /* padding: 1px; */
-    background: yellow;
-    /* font-size: 10px; */
-    /* position: absolute; */
-    /* top: 4px; */
-    /* z-index: 10px; */
-    /* right: 55px; */
-  }
-  .cart-svg {
-    width: 90px;
+  .card-icon {
+    width: 50px;
+    /* left: -50px; */
     height: 50px;
     display: flex;
+    background: #ffffff;
     border: 1px solid red;
+
+    .cart-item {
+      display: flex;
+      width: 16px;
+      height: 17px;
+    }
   }
   svg {
-    font-size: 29px;
+    display: flex;
+    font-size: 35px;
     color: #000;
-    margin-right: 190px;
     border: 1px solid red;
   }
 

@@ -22,7 +22,7 @@ export default createGlobalStyle`
     font-weight: 600;
     font-size: 15px;
   }
-  *, button, input {
+  *, button, input,h2 {
     border: 0;
     background: none;
     font-family: 'Montserrat', -apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;

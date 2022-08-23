@@ -20,20 +20,19 @@ const Menu: React.FC<Props> = ({ setIsModalVisible }) => {
         <div
           style={{
             cursor: "pointer",
+            width: "90px",
+            height: "45px",
+            background: "#fff",
           }}
           onClick={() => {
             setIsModalVisible(true);
           }}
         >
-          <div className="cart-item1">
-            <div className="cart-item">{countCart?.length}</div>
-            <FiShoppingCart />
-          </div>
-        </div>
-      ) : (
-        <div className="cart-svg">
+          <div className="cart-item">{countCart?.length}</div>
           <FiShoppingCart />
         </div>
+      ) : (
+        <FiShoppingCart />
       )}
     </Container>
   );

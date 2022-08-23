@@ -6,7 +6,7 @@ import {
   Container,
   Wrapper,
   Content,
-  Sider,
+  // Sider,
   Checkout,
   ModalContainer,
 } from "./styles";
@@ -44,16 +44,15 @@ const LayoutCompeent: React.FC = () => {
   }, [countCart]);
   return (
     <Container>
+      <HeaderMenu setIsModalVisible={setIsModalVisible} />
       <Wrapper>
-        <HeaderMenu setIsModalVisible={setIsModalVisible} />
-
         <Content>
           <ModalContainer
-            title="CARRINHO"
+            title="Carrinho de compras"
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            width={1200}
+            width={486}
           >
             <div
               style={{
@@ -62,12 +61,12 @@ const LayoutCompeent: React.FC = () => {
               }}
             >
               <div>
-                <div className="chekout-title">
+                {/* <div className="chekout-title">
                   <h2>imagem</h2>
                   <h2>Nome do produto</h2>
                   <h2>Valor</h2>
                   <h2>Quantidade</h2>
-                </div>
+                </div> */}
 
                 {countCart.map((item: any) => {
                   return (
@@ -78,14 +77,14 @@ const LayoutCompeent: React.FC = () => {
                             <img src={item.photo} alt="" />
                           </div>
                           <div>{item.name}</div>
+                          <div className="btn">
+                            - <input type="text" />+
+                          </div>
                           <div>
                             {Intl.NumberFormat("pt-br", {
                               style: "currency",
                               currency: "BRL",
                             }).format(item.price)}
-                          </div>
-                          <div className="btn">
-                            - <input type="text" />+
                           </div>
                         </div>
                       </Checkout>
@@ -93,7 +92,7 @@ const LayoutCompeent: React.FC = () => {
                   );
                 })}
               </div>
-              <div className="modal-resumo">
+              {/* <div className="modal-resumo">
                 <div>
                   <h1>Resumo</h1>
                 </div>
@@ -105,12 +104,12 @@ const LayoutCompeent: React.FC = () => {
                 </div>
                 <div>Descontos</div>
                 <hr />
-                <div className="total">
-                  <h1>Total</h1> R${total + 10}
-                </div>
-                <button>Finaliza Compra</button>
-              </div>
+              </div> */}
             </div>
+            <div className="total">
+              <h1>Total</h1> R${total + 10}
+            </div>
+            <button>Finaliza Compra</button>
           </ModalContainer>
           <div
             style={{

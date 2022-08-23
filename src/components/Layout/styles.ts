@@ -4,16 +4,23 @@ import { Modal } from "antd";
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
+  /* border: 22px solid #000; */
 `;
 
 export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 16px;
+  /* border: 1px solid red; */
 `;
 
 export const Content = styled.div`
+  width: 80%;
+  height: 100%;
   display: flex;
+  align-items: center;
   /* border: 1px solid red; */
+  margin-left: 140px;
+  margin-top: 90px;
 `;
 
 export const Sider = styled.div`
@@ -21,14 +28,14 @@ export const Sider = styled.div`
   padding: 20px;
   border: 1px solid #ccc;
 
-  input {
+  /* input {
     width: 30vh;
     height: 3vw;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: white;
     padding: 3px;
-  }
+  } */
 
   .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
     width: 300px;
@@ -48,7 +55,7 @@ export const Sider = styled.div`
 `;
 export const ModalContainer = styled(Modal)`
   .modal-resumo {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     width: 300px;
     height: 260px;
     margin-left: 10px;
@@ -95,39 +102,43 @@ export const ModalContainer = styled(Modal)`
 `;
 
 export const Checkout = styled.div`
-  width: 100%;
+  width: 150%;
+  /* height: 100px; */
   box-shadow: 0 2px 10px gray;
-  border-radius: 10px;
-  padding: 14px;
-  margin-top: 20px;
+  border-radius: 8px;
+  padding: 10px;
   align-items: center;
+  /* margin-top: 20px; */
+  /* align-items: center; */
+  border: 1px solid #000;
+
   img {
     width: 50px;
     height: 50px;
   }
 
   .checkout-modal {
+    width: 100%;
     display: flex;
     justify-content: space-around;
 
-    gap: 200px;
+    /* gap: 200px; */
     /* border: 1px solid #000; */
+  }
+  .btn {
+    background: white;
+    color: #00bfff;
+    font-size: 25px;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
-    .btn {
-      background: white;
-      color: #00bfff;
-      font-size: 35px;
-      gap: 10px;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-
-      input {
-        height: 30px;
-        width: 30px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
+    input {
+      height: 20px;
+      width: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
   }
 `;

@@ -58,6 +58,7 @@ const CardImagem: React.FC<Props> = (props) => {
               }).format(item.price)}
             </p>
           </div>
+          <p>{item.description}</p>
 
           <button
             onClick={() => {
