@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    min-height: 100%;
+    /* min-height: 100%; */
     background: var(--color-primary);
   }
   h1,h4 {
@@ -25,9 +25,10 @@ export default createGlobalStyle`
   *, button, input,h2 {
     border: 0;
     background: none;
-    font-family: 'Montserrat', -apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-family: 'Montserrat', -apple-system,Helvetica,Helvetica,Roboto,Arial,sans-serif;
   }
   :root {
+    font-size: 62.5%;
     --color-primary: #F5F5F5;
     --color-black: #333;
     --color-white: #FFF;

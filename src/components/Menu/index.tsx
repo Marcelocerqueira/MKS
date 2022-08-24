@@ -10,30 +10,29 @@ interface Props {
 
 const Menu: React.FC<Props> = ({ setIsModalVisible }) => {
   const { setCountCart, countCart } = useAuth();
-  // console.log("teste", countCart);
   return (
     <Container>
       <h1>MKS</h1>
       <p>Sistemas</p>
-
-      {countCart?.length > 0 ? (
-        <div
-          style={{
-            cursor: "pointer",
-            width: "90px",
-            height: "45px",
-            background: "#fff",
-          }}
-          onClick={() => {
-            setIsModalVisible(true);
-          }}
-        >
-          <div className="cart-item">{countCart?.length}</div>
-          <FiShoppingCart />
-        </div>
-      ) : (
+      <div
+        style={{
+          cursor: "pointer",
+          display: "flex",
+          padding: "1rem",
+          borderRadius: "5px",
+          position: "relative",
+          left: "-9rem",
+          alignItems: "center",
+          background: "#fff",
+          gap: 10,
+        }}
+        onClick={() => {
+          setIsModalVisible(true);
+        }}
+      >
         <FiShoppingCart />
-      )}
+        <div className="cart-item">{countCart?.length}</div>
+      </div>
     </Container>
   );
 };

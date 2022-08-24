@@ -2,22 +2,25 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+
+  gap: 2.2rem;
 
   .card {
     box-shadow: 0 2px 10px gray;
     border-radius: 8px;
-    padding: 10px;
+    padding: 1rem;
 
     img {
-      width: 217px;
-      height: 200px;
+      width: 15rem;
+      height: 23vh;
     }
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #2c2c2c;
   }
@@ -26,14 +29,13 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    /* border: 2px solid #000; */
     justify-content: space-between;
 
     p {
-      width: 90px;
-      height: 30px;
-      font-size: 15px;
-      margin-top: 10px;
+      width: 9rem;
+      height: 2.5rem;
+      font-size: 1.2rem;
+      margin-top: 1rem;
       border-radius: 5px;
       color: #ffffff;
       background: #373737;
@@ -46,8 +48,16 @@ export const Container = styled.div`
     background: #0f52ba;
     color: white;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 600px;
-    padding: 13px;
+    padding: 1rem;
+    svg {
+      font-size: 1.6rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .card {
+      background: red;
+    }
   }
 `;

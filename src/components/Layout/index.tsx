@@ -6,7 +6,6 @@ import {
   Container,
   Wrapper,
   Content,
-  // Sider,
   Checkout,
   ModalContainer,
 } from "./styles";
@@ -52,22 +51,18 @@ const LayoutCompeent: React.FC = () => {
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
-            width={486}
+            width={590}
+            cancelText
+            okText
+            bodyStyle={{ background: "#0F52BA" }}
           >
             <div
               style={{
-                // border: "1px solid red",
                 display: "flex",
+                height: "70vh",
               }}
             >
               <div>
-                {/* <div className="chekout-title">
-                  <h2>imagem</h2>
-                  <h2>Nome do produto</h2>
-                  <h2>Valor</h2>
-                  <h2>Quantidade</h2>
-                </div> */}
-
                 {countCart.map((item: any) => {
                   return (
                     <>
@@ -92,24 +87,11 @@ const LayoutCompeent: React.FC = () => {
                   );
                 })}
               </div>
-              {/* <div className="modal-resumo">
-                <div>
-                  <h1>Resumo</h1>
-                </div>
-                <div className="produto">
-                  <h3>Produto</h3> R${total}
-                </div>
-                <div className="fret">
-                  <h3>Frete</h3> R${10}
-                </div>
-                <div>Descontos</div>
-                <hr />
-              </div> */}
             </div>
             <div className="total">
-              <h1>Total</h1> R${total + 10}
+              <h1>Total</h1> R${total}
             </div>
-            <button>Finaliza Compra</button>
+            <button className="btn-compra">Finaliza Compra</button>
           </ModalContainer>
           <div
             style={{
