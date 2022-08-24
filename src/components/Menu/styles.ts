@@ -10,10 +10,10 @@ export const Container = styled.div`
   align-items: center;
 
   & {
-    @media screen and (max-width: 414px) {
+    @media screen and (max-width: 500px) {
       grid-template-columns: repeat(1, 1fr);
       margin-left: calc(100% - 100%);
-      border: 1px solid red;
+      /* border: 1px solid red; */
     }
   }
 

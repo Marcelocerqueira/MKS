@@ -9,7 +9,6 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 1.6rem;
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
 `;
@@ -105,8 +104,6 @@ export const Checkout = styled.div`
       position: relative;
       width: 100%;
       height: 40%;
-      border: 1px solid red;
-      /* margin: 0 auto; */
 
       .checkout-modal {
         display: flex;
@@ -114,13 +111,11 @@ export const Checkout = styled.div`
         align-items: center;
         justify-content: center;
         gap: 20px;
-        /* z-index: 99; */
-        /* position: relative; */
       }
 
       img {
-        width: 190px;
-        height: 100px;
+        width: 19rem;
+        height: 14rem;
       }
     }
   }
