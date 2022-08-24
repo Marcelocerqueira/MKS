@@ -9,6 +9,14 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  & {
+    @media screen and (max-width: 414px) {
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: calc(100% - 100%);
+      border: 1px solid red;
+    }
+  }
+
   p {
     width: 100%;
     color: #ffffff;
