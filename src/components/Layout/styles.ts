@@ -17,25 +17,31 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   width: 80%;
   height: 100%;
-
-  /* display: flex; */
   align-items: center;
-  /* margin-left: 140px; */
-  /* margin-top: 90px; */
-
-  /* margin-left: 7.4rem; */
   margin-top: 9rem;
-  /* border: 2px solid red; */
 `;
 
 export const ModalContainer = styled(Modal)`
   margin-left: 930px;
   position: fixed;
   margin-top: -9.7rem;
-  /* border: 2px solid red; */
+  margin-left: calc(100% - 40%);
+  position: relative;
+  & {
+    @media screen and (max-width: 500px) {
+      gap: 1rem;
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: calc(100% - 95%);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+  }
 
   .modal-resumo {
-    width: 300px;
+    /* width: 300px; */
     margin-left: 10px;
     border-radius: 6px;
     padding: 20px;
@@ -89,6 +95,34 @@ export const Checkout = styled.div`
   img {
     width: 5rem;
     height: 5rem;
+  }
+
+  & {
+    @media screen and (max-width: 500px) {
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: calc(100% - 100%);
+      position: relative;
+      width: 100%;
+      height: 40%;
+      border: 1px solid red;
+      /* margin: 0 auto; */
+
+      .checkout-modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        /* z-index: 99; */
+        /* position: relative; */
+      }
+
+      img {
+        width: 190px;
+        height: 100px;
+      }
+    }
   }
 
   .checkout-modal {

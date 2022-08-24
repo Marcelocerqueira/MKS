@@ -48,6 +48,7 @@ const LayoutCompeent: React.FC = () => {
         <Content>
           <ModalContainer
             title="Carrinho de compras"
+            theme={{ background: "#0F52BA" }}
             visible={isModalVisible}
             onOk={handleOk}
             onCancel={handleCancel}
@@ -73,7 +74,7 @@ const LayoutCompeent: React.FC = () => {
                           </div>
                           <div>{item.name}</div>
                           <div className="btn">
-                            - <input type="text" />+
+                            - <input type="text" /> +
                           </div>
                           <div>
                             {Intl.NumberFormat("pt-br", {

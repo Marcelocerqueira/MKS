@@ -4,9 +4,14 @@ export const Container = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-
   gap: 2.2rem;
+
+  & {
+    @media screen and (max-width: 500px) {
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 
   .card {
     box-shadow: 0 2px 10px gray;
@@ -53,11 +58,6 @@ export const Container = styled.div`
     padding: 1rem;
     svg {
       font-size: 1.6rem;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    .card {
-      background: red;
     }
   }
 `;
